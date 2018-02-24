@@ -39,7 +39,6 @@ public class Player : MonoBehaviour {
 				Camera.main.backgroundColor = night;
 
 			}
-			
 
 		}
 		if (Input.GetKeyUp (KeyCode.Alpha3)) {
@@ -51,9 +50,18 @@ public class Player : MonoBehaviour {
 			}
 
 		}
+		if (Input.GetKeyUp (KeyCode.Q)) {
+
+			if (maxSpeed == 2.0f) {
+				maxSpeed = 0.3f;
+			} else {
+				maxSpeed = 2.0f;
+			}
+
+		}
 
 	}
-
+	float maxSpeed = 0.3f;
 	void Movement () {
 		if (Input.GetKey (KeyCode.LeftShift)) {
 			accelerate = true;
@@ -64,7 +72,7 @@ public class Player : MonoBehaviour {
 		}
 
 		if (accelerate) {
-			moveForward -= (moveForward - 0.3f) / 10;
+			moveForward -= (moveForward - maxSpeed) / 10;
 		} else {
 			moveForward -= (moveForward - 0) / 50;
 		}
