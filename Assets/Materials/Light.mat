@@ -71,7 +71,11 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _alpha: 0.04
+    - _alpha: 0.141
+    - _node_1036: 100
+    - _node_2611: 102
+    - _node_2778: 0.6
+    - _node_3737: 10
     - _node_7898: 4.700855
     - _power: 0
     - _s1: 0.5

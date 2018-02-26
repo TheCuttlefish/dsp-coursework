@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Amplitude: 0.298
+    - _Amplitude: 0.875
     - _BlendOp: 0
     - _BumpScale: 1
     - _CameraFadingEnabled: 0
@@ -97,8 +97,8 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 0
-    - _amount: 0.579
-    - _frequency: 0.74
+    - _amount: 0.469
+    - _frequency: 1.15
     - _node_9024: 0.059
     - _node_9418: 0
     m_Colors:
