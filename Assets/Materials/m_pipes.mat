@@ -94,6 +94,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 248fab03846d1df42a2c0943a944d5b0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _rays:
+        m_Texture: {fileID: 2800000, guid: 267f5ec9b21a9d24e8130748651997a5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _rays1:
         m_Texture: {fileID: 2800000, guid: 267f5ec9b21a9d24e8130748651997a5, type: 3}
         m_Scale: {x: 1, y: 1}

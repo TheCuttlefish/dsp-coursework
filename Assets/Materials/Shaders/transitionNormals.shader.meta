@@ -4,7 +4,9 @@ timeCreated: 1519469105
 licenseType: Free
 ShaderImporter:
   externalObjects: {}
-  defaultTextures: []
+  defaultTextures:
+  - _raysNoise: {fileID: 2800000, guid: 28c7aad1372ff114b90d330f8a2dd938, type: 3}
+  - _Raystexture: {fileID: 2800000, guid: 267f5ec9b21a9d24e8130748651997a5, type: 3}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

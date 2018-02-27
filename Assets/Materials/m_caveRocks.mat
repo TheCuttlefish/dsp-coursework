@@ -22,11 +22,33 @@ Material:
         m_Texture: {fileID: 2800000, guid: 93670ec5100f6db4380ab2cb2a2d3240, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Raystexture:
+        m_Texture: {fileID: 2800000, guid: 267f5ec9b21a9d24e8130748651997a5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _rays1:
+        m_Texture: {fileID: 2800000, guid: 267f5ec9b21a9d24e8130748651997a5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _rays2:
+        m_Texture: {fileID: 2800000, guid: 267f5ec9b21a9d24e8130748651997a5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _raysNoise:
+        m_Texture: {fileID: 2800000, guid: 248fab03846d1df42a2c0943a944d5b0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _node_1569: 3
     - _node_3935: 0
     - _node_8138: 0
-    - _scale: 0.44
+    - _raysalpha: 1.6
+    - _raysnoiseamount: 7.03
+    - _raysnoisescale: 0.303
+    - _raysscale1: 0.071
+    - _raysscale2: 0.028
+    - _raysspeed: 5.3
+    - _scale: 0.6
     - _steps: 2
     m_Colors:
     - _Color: {r: 0, g: 0.57760054, b: 0.64705884, a: 1}

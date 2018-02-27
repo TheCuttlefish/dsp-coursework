@@ -79,12 +79,15 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
+    - _areapower: 1.3
+    - _areasize: 0.0137
     - _m: 0
     - _node_5512: 10
+    - _normalresolution: 5.3
     - _power: 0.4
     - _res: 4.7
     - _s: 0.0328
-    - _size: 0.0166
+    - _size: 0.0037
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
