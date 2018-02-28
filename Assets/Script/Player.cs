@@ -53,7 +53,7 @@ public class Player : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.Q)) {
 
 			if (maxSpeed == 2.0f) {
-				maxSpeed = 0.3f;
+				maxSpeed = 1.0f;
 			} else {
 				maxSpeed = 2.0f;
 			}
@@ -61,7 +61,7 @@ public class Player : MonoBehaviour {
 		}
 
 	}
-	float maxSpeed = 0.3f;
+	float maxSpeed = 1.0f;
 	void Movement () {
 		if (Input.GetKey (KeyCode.LeftShift)) {
 			accelerate = true;

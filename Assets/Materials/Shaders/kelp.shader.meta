@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 1d8a46826dc8d3c4db32cdd5952eee07
+timeCreated: 1519427100
+licenseType: Free
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _Coral: {fileID: 2800000, guid: c9da4f6fcf2e05a4fb62621faa216299, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
