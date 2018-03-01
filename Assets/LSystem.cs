@@ -25,7 +25,7 @@ public class LSystem : MonoBehaviour {
 					tempTree = string.Concat (tempTree, "a[b[b]]"); //ab[bb]
 				}
 				if (tree.Substring (i, 1) == "b") {
-					tempTree = string.Concat (tempTree, "a[bbb]");//a[bb]
+					tempTree = string.Concat (tempTree, "a[bbb]"); //a[bb]
 				}
 				if (tree.Substring (i, 1) == "[" || tree.Substring (i, 1) == "]") {
 					tempTree = string.Concat (tempTree, tree.Substring (i, 1));
@@ -48,7 +48,7 @@ public class LSystem : MonoBehaviour {
 	List<Vector3> positions = new List<Vector3> ();
 	void Draw () {
 
-		positions.Add (new Vector3 (0, 0, 0)); // push
+		positions.Add (transform.position); // push
 		//positions.RemoveAt (positions.Count - 1); // pop
 		for (int i = 0; i < tree.Length; i++) {
 
@@ -86,7 +86,7 @@ public class LSystem : MonoBehaviour {
 
 	void DrawSlow () {
 		if (!setPosOnce) {
-			positions.Add (new Vector3 (0, 0, 0)); // push
+			positions.Add (transform.position); // push
 			setPosOnce = true;
 		}
 

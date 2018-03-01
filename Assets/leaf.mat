@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Grass:
-        m_Texture: {fileID: 2800000, guid: 6dc1935a41e3a6e4f84a0d73334a6e5c, type: 3}
+        m_Texture: {fileID: 2800000, guid: fe9179337c9a10a419e19f141b0f7223, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -93,7 +93,7 @@ Material:
     - _SrcBlend: 5
     - _UVSec: 0
     - _ZWrite: 0
-    - _amount: 1
+    - _amount: 0.396
     - _frequency: 0.5
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
