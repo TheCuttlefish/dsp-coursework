@@ -79,8 +79,7 @@ Shader "Shader Forge/coral" {
 ////// Lighting:
 ////// Emissive:
                 float4 _Coral_var = tex2D(_Coral,TRANSFORM_TEX(i.uv0, _Coral));
-                float3 node_7236 = lerp(_MainColour.rgb,_Tips.rgb,(saturate(((i.posWorld.rgb-objPos.rgb).g*_tipsgradient))*_Coral_var.r));
-                float3 emissive = node_7236;
+                float3 emissive = lerp(_MainColour.rgb,_Tips.rgb,(saturate(((i.posWorld.rgb-objPos.rgb).g*_tipsgradient))*_Coral_var.r));
                 float3 finalColor = emissive;
                 fixed4 finalRGBA = fixed4(finalColor,_Coral_var.a);
                 UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
