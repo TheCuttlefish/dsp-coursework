@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 54536613212246494}
   - component: {fileID: 96409113298821990}
   - component: {fileID: 136297918650962838}
+  - component: {fileID: 114332718677950646}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -641,6 +642,19 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114332718677950646
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1539442687068626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad5a254d219f724b95b2b716e86a46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fmodEventPath: event:/ship
+  speed: 0
 --- !u!114 &114775744254073534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -652,6 +666,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b70537ca749edd4997ff76841d1d8ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveForward: 0
+  maxSpeed: 1
 --- !u!114 &114811782367171690
 MonoBehaviour:
   m_ObjectHideFlags: 1
