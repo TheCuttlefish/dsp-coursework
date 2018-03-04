@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
 	Light directional;
 	void Start () {
 		RenderSettings.fog = true;
-			newColour = azure;
+		newColour = azure;
 		light = transform.Find ("light").GetComponent<Light> ();
 		light.enabled = false;
 		directional = GameObject.Find ("Directional Light").GetComponent<Light> ();
@@ -74,7 +74,10 @@ public class Player : MonoBehaviour {
 	}
 	float maxSpeed = 1.0f;
 	void Movement () {
-		if (Input.GetKey (KeyCode.LeftShift)) {
+
+		
+
+		if (Input.GetKey (KeyCode.LeftShift) || Input.GetButton ("Fire1") || Input.GetAxis ("RightTrigger") < -.5f) {
 			accelerate = true;
 
 		} else {
@@ -89,7 +92,7 @@ public class Player : MonoBehaviour {
 		}
 
 		transform.Translate (0, 0, moveForward, Space.Self);
-		transform.Rotate (Input.GetAxis ("Vertical") * 2.0f, Input.GetAxis ("Horizontal") * 3.0f, 0);
+		transform.Rotate (Input.GetAxis ("Vertical") * 1.0f, Input.GetAxis ("Horizontal") * 2.0f, 0);
 		//correction
 		transform.Rotate (Vector3.Dot (Vector3.up, transform.forward), 0, Vector3.Dot (Vector3.up, -transform.right));
 		//transform.Rotate (0,Vector3.Dot (Vector3.forward, transform.right), 0); // - code for left right correction
