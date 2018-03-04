@@ -35,7 +35,7 @@ public class LSystem : MonoBehaviour {
 			iteration--;
 			//print (tree + " " + (iteration));
 		}
-		print (tree + " " + (iteration));
+	//	print (tree + " " + (iteration));
 
 	}
 

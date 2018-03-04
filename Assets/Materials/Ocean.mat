@@ -76,7 +76,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _waterdisplacement:
         m_Texture: {fileID: 2800000, guid: 25cec6e2388b24e448e6c85ae2688737, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
@@ -97,21 +97,21 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _alpha: 2.1
+    - _alpha: 1.13
     - _amp_1: 0.2
     - _amp_2: 0.2
-    - _amplitude: 0.062
+    - _amplitude: 0.044
     - _div: 2.18
     - _emmision: 1
     - _frequence: 0.005
     - _frequence_1: 0.146
     - _frequence_2: 0
-    - _fresnel: 1
+    - _fresnel: 0.561
     - _node_1385: 0
     - _node_2537: 0.521
     - _node_2592: 0
     - _node_3280: 0.173
-    - _node_3846: 0.005
+    - _node_3846: 0.1
     - _node_3924: 0
     - _node_4842: 1
     - _node_540: 0.992

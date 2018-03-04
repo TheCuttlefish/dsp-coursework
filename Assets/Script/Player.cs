@@ -8,6 +8,8 @@ public class Player : MonoBehaviour {
 	Light light;
 	Light directional;
 	void Start () {
+		RenderSettings.fog = true;
+			newColour = azure;
 		light = transform.Find ("light").GetComponent<Light> ();
 		light.enabled = false;
 		directional = GameObject.Find ("Directional Light").GetComponent<Light> ();
@@ -19,8 +21,17 @@ public class Player : MonoBehaviour {
 	Color azure = new Color (.32f, .75f, .81f);
 	Color night = new Color (.03f, .33f, .37f);
 	bool fogType = true;
+	Color newColour;
+
+	public void ChangeLight (Color c) {
+		newColour = c;
+	}
 
 	void Light () {
+
+		//lerp
+		RenderSettings.fogColor = Vector4.Lerp (RenderSettings.fogColor, newColour, 0.02f);
+		Camera.main.backgroundColor = Vector4.Lerp (Camera.main.backgroundColor, newColour, 0.02f);
 
 		if (Input.GetKeyUp (KeyCode.F)) {
 			light.enabled = !light.enabled;

@@ -92,7 +92,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Emmision: 0
-    - _FloorNoisescale: 0.11
+    - _FloorNoisescale: 0.7
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -108,12 +108,12 @@ Material:
     - _node_9503: 0
     - _noiseamount: 8.12
     - _noisescale: 0.6
-    - _raysalpha: 2
-    - _raysnoiseamount: 7.21
-    - _raysnoisescale: 0.591
+    - _raysalpha: 1.15
+    - _raysnoiseamount: 10
+    - _raysnoisescale: 0.276
     - _raysscale1: 0.029
     - _raysscale2: 0.015
-    - _raysspeed: 10.2
+    - _raysspeed: 15.6
     - _scale: 2.73
     - _steps: 2
     m_Colors:
