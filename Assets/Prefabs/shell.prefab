@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4776657474348888}
   - component: {fileID: 33593663353463804}
   - component: {fileID: 23579740725043776}
+  - component: {fileID: 114470186351721142}
   m_Layer: 0
   m_Name: shell
   m_TagString: Untagged
@@ -113,6 +114,28 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1365917894786496}
   m_Mesh: {fileID: 4300000, guid: 2dbaefe3d0d9eba47a8ab08b7378f08b, type: 3}
+--- !u!114 &114470186351721142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1365917894786496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/bubles
+  PlayEvent: 1
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 15
+  OverrideMaxDistance: 150
 --- !u!198 &198287525109205044
 ParticleSystem:
   m_ObjectHideFlags: 1

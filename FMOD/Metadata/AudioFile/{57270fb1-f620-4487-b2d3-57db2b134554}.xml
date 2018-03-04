@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{57270fb1-f620-4487-b2d3-57db2b134554}">
+        <property name="assetPath">
+            <value>4919__dobroide__pumps-fast.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>6.2000000000000002</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{90a109f6-4310-4911-8451-e66fa179ebcb}</destination>
+        </relationship>
+    </object>
+</objects>
