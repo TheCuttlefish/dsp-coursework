@@ -30,7 +30,7 @@ public class ShipSound : MonoBehaviour {
 	void FixedUpdate() {
 
 		speed = player.moveForward / player.maxSpeed;
-		fmodShipSpeed.setValue( speed );
+		fmodShipSpeed.setValue( speed * .5f );
 
 	}
 
