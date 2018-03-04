@@ -14,7 +14,10 @@ public class Player : MonoBehaviour {
 		light.enabled = false;
 		directional = GameObject.Find ("Directional Light").GetComponent<Light> ();
 	}
-	float moveForward = 0;
+
+	[HideInInspector]
+	public float moveForward = 0;
+
 	bool accelerate = false;
 	// Update is called once per frame
 
@@ -72,7 +75,10 @@ public class Player : MonoBehaviour {
 		}
 
 	}
-	float maxSpeed = 1.0f;
+
+	[HideInInspector]
+	public float maxSpeed = 1.0f;
+	
 	void Movement () {
 
 		
