@@ -71,11 +71,11 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _alpha: 0.582
-    - _innercircle: 0.368
+    - _alpha: 0.502
+    - _innercircle: 0.42
     - _node_4345: 0.269
     - _node_6601: 0.5
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Colour2: {r: 0.9308316, g: 0.83823526, b: 1, a: 1}
+    - _Color: {r: 1, g: 0.9964503, b: 0.9485294, a: 1}
+    - _Colour2: {r: 0.8235294, g: 0.9415822, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
