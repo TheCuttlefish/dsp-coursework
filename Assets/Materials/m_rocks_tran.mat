@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: m_rocks_tran
-  m_Shader: {fileID: 4800000, guid: 404c1ac7d3bc2db4ba587592cfb85f06, type: 3}
+  m_Shader: {fileID: 4800000, guid: ab0422b4dde83f044a2fd9545fb9fae7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -66,6 +66,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 267f5ec9b21a9d24e8130748651997a5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _node_2571:
+        m_Texture: {fileID: 2800000, guid: 25cec6e2388b24e448e6c85ae2688737, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _noiseCaustics:
         m_Texture: {fileID: 2800000, guid: 248fab03846d1df42a2c0943a944d5b0, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -92,7 +96,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Emmision: 0
-    - _FloorNoisescale: 2.18
+    - _FloorNoisescale: 3.48
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -105,18 +109,26 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
+    - _node_2259: 0.02
+    - _node_3361: 0
+    - _node_5783: 0.056
+    - _node_6639: 0.004
     - _node_9503: 0
     - _noiseamount: 8.12
     - _noisescale: 0.6
-    - _raysalpha: 0.22
+    - _raysalpha: 1.52
     - _raysnoiseamount: 7.21
-    - _raysnoisescale: 0.591
-    - _raysscale1: 0.029
-    - _raysscale2: 0.015
+    - _raysnoisescale: 0.521
+    - _raysscale1: 0.011
+    - _raysscale2: 0.01
     - _raysspeed: 10.2
     - _scale: 2.73
     - _steps: 2
+    - _value: 0.004
+    - _vertexamount: 0
+    - _vertexamp: 0.09
+    - _vertexfreq: 57.3
     m_Colors:
-    - _Color: {r: 0.23502381, g: 0.49608412, b: 0.50735295, a: 1}
+    - _Color: {r: 0.4811851, g: 0.7247792, b: 0.7352941, a: 1}
     - _Color2: {r: 0.064662635, g: 0.14929602, b: 0.19117647, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
