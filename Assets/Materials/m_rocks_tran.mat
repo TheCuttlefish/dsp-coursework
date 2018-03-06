@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: m_rocks_tran
-  m_Shader: {fileID: 4800000, guid: ab0422b4dde83f044a2fd9545fb9fae7, type: 3}
+  m_Shader: {fileID: 4800000, guid: 404c1ac7d3bc2db4ba587592cfb85f06, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
