@@ -12,6 +12,8 @@ public class OccludedSoundEmitter : MonoBehaviour {
 	
 	Transform mainCamera;
 
+	FMOD.Studio.EventInstance fmodEvent;
+
 	FMOD.Studio.ParameterInstance fmodIsOccluded;
 
 	float isOccludedValue = 1.0f;
@@ -21,20 +23,24 @@ public class OccludedSoundEmitter : MonoBehaviour {
 		"Walls",
 		"Camera"
 	};
+	
+	float occludedTimer = 0.0f;
+
+	float occludedRestartTime = 2.0f;
 
 	void Start() {
 
 		mainCamera = Camera.main.transform;
 
-		var e = FMODUnity.RuntimeManager.CreateInstance(fmodEventPath);
+		fmodEvent = FMODUnity.RuntimeManager.CreateInstance(fmodEventPath);
 
-		e.getParameter("isOccluded", out fmodIsOccluded);
+		fmodEvent.getParameter("isOccluded", out fmodIsOccluded);
 
-		e.start();
+		fmodEvent.start();
 
-		FMODUnity.RuntimeManager.AttachInstanceToGameObject( e, transform, GetComponent<Rigidbody>() );
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject( fmodEvent, transform, GetComponent<Rigidbody>() );
 		
-		e.release();
+		fmodEvent.release();
 	}
 
 	void FixedUpdate() {
@@ -60,13 +66,22 @@ public class OccludedSoundEmitter : MonoBehaviour {
 		if( isOccluded ) {
 
 			isOccludedValue = Mathf.Lerp(isOccludedValue, 1.0f, Time.fixedDeltaTime);
+			occludedTimer +=  Time.fixedDeltaTime;
 
 		} else {
 
 			isOccludedValue = Mathf.Lerp(isOccludedValue, 0.0f, Time.fixedDeltaTime);
+			occludedTimer = 0.0f;
 
 		}
 
+		if( occludedTimer >= occludedRestartTime ) {
+			
+			fmodEvent.setTimelinePosition(0);
+
+		}
+		
+		//occludedRestartTime
 		print( isOccludedValue );
 		
 		fmodIsOccluded.setValue( isOccludedValue );

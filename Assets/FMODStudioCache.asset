@@ -13,14 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114889282836935178}
-  - {fileID: 114474665018209716}
+  - {fileID: 114199148170325818}
   EditorEvents:
   - {fileID: 114234198779619930}
   - {fileID: 114518956171848616}
-  - {fileID: 114753833056337426}
-  MasterBankRef: {fileID: 114474665018209716}
+  - {fileID: 114328804150420392}
+  MasterBankRef: {fileID: 114199148170325818}
   StringsBankRef: {fileID: 114889282836935178}
-  stringsBankWriteTime: 636561226565349076
+  stringsBankWriteTime: 636561507040000000
   cacheVersion: 2
 --- !u!114 &114002580539122994
 MonoBehaviour:
@@ -34,6 +34,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: shipSpeed
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114044710468194160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isOccluded
   Min: 0
   Max: 1
   Default: 0
@@ -67,6 +82,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114134987641569960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isOccluded
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114177731019784808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +114,24 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 764
+  Exists: 1
+--- !u!114 &114199148170325818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Oyar\repos\uni\dsp-coursework\FMOD\Build\Desktop\Master Bank.bank
+  lastModified: 636561507040000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 652608
   Exists: 1
 --- !u!114 &114222589028913350
 MonoBehaviour:
@@ -117,12 +165,12 @@ MonoBehaviour:
   Path: event:/ship
   guid: 1b196ddf8f5d354ca3b039c203500dcd
   Banks:
-  - {fileID: 114474665018209716}
+  - {fileID: 114199148170325818}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114075647181376910}
+  - {fileID: 114741669641909700}
   MinDistance: 0
   MaxDistance: 0
   Length: 2793
@@ -156,6 +204,44 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114307605268147218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: shipSpeed
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114328804150420392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/whale
+  guid: e1f2d94994fa574baee60864828d57db
+  Banks:
+  - {fileID: 114199148170325818}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114700439369187826}
+  MinDistance: 80
+  MaxDistance: 1000
+  Length: 22443
 --- !u!114 &114429484683603570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +281,22 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 651968
-  Exists: 1
+  Exists: 0
+--- !u!114 &114489064685069528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: shipSpeed
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114495591746331352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +334,7 @@ MonoBehaviour:
   Path: event:/bubles
   guid: 74724e2ad52749419d684564e6006ded
   Banks:
-  - {fileID: 114474665018209716}
+  - {fileID: 114199148170325818}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -259,6 +360,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 182496
   Exists: 1
+--- !u!114 &114580761100863140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: shipSpeed
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114582826321612540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +460,36 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6200
+--- !u!114 &114700439369187826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isOccluded
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114741669641909700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: shipSpeed
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114753833056337426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,8 +503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/whale
   guid: e1f2d94994fa574baee60864828d57db
-  Banks:
-  - {fileID: 114474665018209716}
+  Banks: []
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -432,7 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636561226565349076
+  lastModified: 636561507040000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
