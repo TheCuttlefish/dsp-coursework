@@ -78,9 +78,8 @@ Shader "Shader Forge/fish" {
                 o.vertexColor = v.vertexColor;
                 o.normalDir = UnityObjectToWorldNormal(v.normal);
                 float4 objPos = mul ( unity_ObjectToWorld, float4(0,0,0,1) );
-                float3 node_6676 = mul( unity_ObjectToWorld, float4((objPos.rgb-mul(unity_ObjectToWorld, v.vertex).rgb),0) ).xyz;
                 float4 node_2469 = _Time;
-                v.vertex.xyz += (saturate((sin((0.1*(node_6676.rgb+(node_2469.g*10.0*(-1.0)))*6.28318530718))*0.5+0.5))*1.0);
+                v.vertex.xyz += (saturate((sin((0.1*(mul( unity_ObjectToWorld, float4((objPos.rgb-mul(unity_ObjectToWorld, v.vertex).rgb),0) ).xyz.rgb+(node_2469.g*10.0*(-1.0)))*6.28318530718))*0.5+0.5))*1.0);
                 o.posWorld = mul(unity_ObjectToWorld, v.vertex);
                 float3 lightColor = _LightColor0.rgb;
                 o.pos = UnityObjectToClipPos( v.vertex );
@@ -109,9 +108,9 @@ Shader "Shader Forge/fish" {
                 float3 diffuseColor = lerp(_Color.rgb,(_Color2.rgb*node_3777),node_3777);
                 float3 diffuse = (directDiffuse + indirectDiffuse) * diffuseColor;
 ////// Emissive:
-                float4 node_688 = _Time;
+                float4 node_3561 = _Time;
                 float2 node_5890 = float2(i.posWorld.r,i.posWorld.b);
-                float2 node_2660 = (_raysscale1*(node_5890+node_688.g*float2(1,1)));
+                float2 node_2660 = (_raysscale1*(node_5890+node_3561.g*float2(1,1)));
                 float4 node_1027 = tex2D(_Rays,TRANSFORM_TEX(node_2660, _Rays));
                 float4 node_579 = _Time;
                 float2 node_6595 = (i.uv0*_raysnoisescale);
@@ -182,9 +181,8 @@ Shader "Shader Forge/fish" {
                 o.vertexColor = v.vertexColor;
                 o.normalDir = UnityObjectToWorldNormal(v.normal);
                 float4 objPos = mul ( unity_ObjectToWorld, float4(0,0,0,1) );
-                float3 node_6676 = mul( unity_ObjectToWorld, float4((objPos.rgb-mul(unity_ObjectToWorld, v.vertex).rgb),0) ).xyz;
                 float4 node_2469 = _Time;
-                v.vertex.xyz += (saturate((sin((0.1*(node_6676.rgb+(node_2469.g*10.0*(-1.0)))*6.28318530718))*0.5+0.5))*1.0);
+                v.vertex.xyz += (saturate((sin((0.1*(mul( unity_ObjectToWorld, float4((objPos.rgb-mul(unity_ObjectToWorld, v.vertex).rgb),0) ).xyz.rgb+(node_2469.g*10.0*(-1.0)))*6.28318530718))*0.5+0.5))*1.0);
                 o.posWorld = mul(unity_ObjectToWorld, v.vertex);
                 float3 lightColor = _LightColor0.rgb;
                 o.pos = UnityObjectToClipPos( v.vertex );
@@ -247,9 +245,8 @@ Shader "Shader Forge/fish" {
             VertexOutput vert (VertexInput v) {
                 VertexOutput o = (VertexOutput)0;
                 float4 objPos = mul ( unity_ObjectToWorld, float4(0,0,0,1) );
-                float3 node_6676 = mul( unity_ObjectToWorld, float4((objPos.rgb-mul(unity_ObjectToWorld, v.vertex).rgb),0) ).xyz;
                 float4 node_2469 = _Time;
-                v.vertex.xyz += (saturate((sin((0.1*(node_6676.rgb+(node_2469.g*10.0*(-1.0)))*6.28318530718))*0.5+0.5))*1.0);
+                v.vertex.xyz += (saturate((sin((0.1*(mul( unity_ObjectToWorld, float4((objPos.rgb-mul(unity_ObjectToWorld, v.vertex).rgb),0) ).xyz.rgb+(node_2469.g*10.0*(-1.0)))*6.28318530718))*0.5+0.5))*1.0);
                 o.posWorld = mul(unity_ObjectToWorld, v.vertex);
                 o.pos = UnityObjectToClipPos( v.vertex );
                 TRANSFER_SHADOW_CASTER(o)
