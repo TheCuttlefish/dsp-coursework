@@ -83,7 +83,7 @@ public class Player : MonoBehaviour {
 
 		
 
-		if (Input.GetKey (KeyCode.LeftShift) || Input.GetButton ("Fire1") || Input.GetAxis ("RightTrigger") < -.5f) {
+		if (Input.GetKey (KeyCode.LeftShift) || Input.GetAxis ("RightTrigger") < -.5f) {
 			accelerate = true;
 
 		} else {

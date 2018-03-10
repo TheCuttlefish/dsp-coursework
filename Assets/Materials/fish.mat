@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: m_rocks_tran
-  m_Shader: {fileID: 4800000, guid: 404c1ac7d3bc2db4ba587592cfb85f06, type: 3}
+  m_Name: fish
+  m_Shader: {fileID: 4800000, guid: b5510605d872f1646a18b96bbb58bf58, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -96,7 +96,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Emmision: 0
-    - _FloorNoisescale: 2.57
+    - _FloorNoisescale: 3.4
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -116,19 +116,19 @@ Material:
     - _node_9503: 0
     - _noiseamount: 8.12
     - _noisescale: 0.6
-    - _raysalpha: 1.52
+    - _raysalpha: 2
     - _raysnoiseamount: 7.21
     - _raysnoisescale: 0.521
     - _raysscale1: 0.011
-    - _raysscale2: 0.01
-    - _raysspeed: 10.2
+    - _raysscale2: 0.128
+    - _raysspeed: 5.1
     - _scale: 2.73
-    - _steps: 2
+    - _steps: 3.82
     - _value: 0.004
     - _vertexamount: 0
     - _vertexamp: 0.09
     - _vertexfreq: 57.3
     m_Colors:
-    - _Color: {r: 0.4811851, g: 0.7247792, b: 0.7352941, a: 1}
-    - _Color2: {r: 0.064662635, g: 0.14929602, b: 0.19117647, a: 1}
+    - _Color: {r: 0.74264705, g: 0.9254564, b: 1, a: 1}
+    - _Color2: {r: 0.13192041, g: 0.34372085, b: 0.44852942, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
