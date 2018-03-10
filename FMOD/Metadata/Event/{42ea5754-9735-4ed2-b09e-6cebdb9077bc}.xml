@@ -144,6 +144,10 @@
     <object class="MixerBusPanner" id="{ad9cb263-488d-4bf8-b6ef-b622c51ddc8b}"/>
     <object class="MixerBusFader" id="{01bf7918-f134-453b-be9a-e1a295769834}"/>
     <object class="SpatialiserEffect" id="{e55f5c9b-c3f8-4121-895b-fcfec41d22b8}"/>
-    <object class="FlangerEffect" id="{e28c4063-49b3-4a12-a1d6-4d7ee0d1d2d2}"/>
+    <object class="FlangerEffect" id="{e28c4063-49b3-4a12-a1d6-4d7ee0d1d2d2}">
+        <property name="rate">
+            <value>9</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{b391abfb-3233-4f3a-8c08-9ef3548c32d6}"/>
 </objects>
