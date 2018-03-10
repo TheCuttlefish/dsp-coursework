@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class OccludedSoundEmitter : MonoBehaviour {
 
@@ -27,6 +28,8 @@ public class OccludedSoundEmitter : MonoBehaviour {
 	float occludedTimer = 0.0f;
 
 	float occludedRestartTime = 2.0f;
+
+	UnityEvent onOcclusionChange = new UnityEvent();
 
 	void Start() {
 
@@ -81,24 +84,9 @@ public class OccludedSoundEmitter : MonoBehaviour {
 
 		}
 		
-		//occludedRestartTime
-		print( isOccludedValue );
-		
 		fmodIsOccluded.setValue( isOccludedValue );
 
-		var renderer = transform.parent.GetComponent<MeshRenderer>();
-
-		var material = renderer.material;
-
-		var color = material.color;
-
-		color.g = .0f; //1.0f - isOccludedValue;
-		color.r = .0f; //1.0f - isOccludedValue;
-		color.b = .0f; //1.0f - isOccludedValue;
-
-		material.SetColor( "Color", color );
-
-		renderer.material = material;
+		onOcclusionChange.Invoke();
 
 	}
 
