@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,8 @@ public class SplineNavigator : MonoBehaviour {
 
 	public CatmullRomSpline spline;
 
-	float speedFactor = 0.1f;
+	[Range(1, 0.01f)]
+	public float speedFactor = 0.1f;
 
 	float time = 0.0f;
 	

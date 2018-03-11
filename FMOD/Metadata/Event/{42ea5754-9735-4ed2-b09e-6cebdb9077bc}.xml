@@ -31,6 +31,9 @@
         <relationship name="timeline">
             <destination>{53aa947f-773d-4643-94ff-811c6e624943}</destination>
         </relationship>
+        <relationship name="banks">
+            <destination>{069b175f-4e68-438f-9519-67f27ae9514b}</destination>
+        </relationship>
     </object>
     <object class="EventMixer" id="{c5fd16d0-c9ff-47e4-a4aa-28bba4b4c5de}">
         <relationship name="masterBus">
@@ -53,7 +56,11 @@
             <destination>{cc38f75f-7456-471c-9617-84425091ba3b}</destination>
         </relationship>
     </object>
-    <object class="EventAutomatableProperties" id="{77b43f72-eaf6-4851-be89-ad04caeb4a42}"/>
+    <object class="EventAutomatableProperties" id="{77b43f72-eaf6-4851-be89-ad04caeb4a42}">
+        <property name="dopplerEnabled">
+            <value>true</value>
+        </property>
+    </object>
     <object class="MarkerTrack" id="{9ba7a772-b350-49b3-9733-05903ce8ee0f}"/>
     <object class="GroupTrack" id="{c8b266e9-7099-4350-aa80-41cf8611c641}">
         <relationship name="modules">
@@ -115,10 +122,10 @@
     </object>
     <object class="LoopRegion" id="{d0c6cbde-bda1-4023-9edd-a6f977c2b821}">
         <property name="position">
-            <value>0</value>
+            <value>0.40000000000000002</value>
         </property>
         <property name="length">
-            <value>4.6971120523681167</value>
+            <value>2.6999999999999997</value>
         </property>
         <relationship name="timeline">
             <destination>{53aa947f-773d-4643-94ff-811c6e624943}</destination>
@@ -143,7 +150,14 @@
     </object>
     <object class="MixerBusPanner" id="{ad9cb263-488d-4bf8-b6ef-b622c51ddc8b}"/>
     <object class="MixerBusFader" id="{01bf7918-f134-453b-be9a-e1a295769834}"/>
-    <object class="SpatialiserEffect" id="{e55f5c9b-c3f8-4121-895b-fcfec41d22b8}"/>
+    <object class="SpatialiserEffect" id="{e55f5c9b-c3f8-4121-895b-fcfec41d22b8}">
+        <property name="minimumDistance">
+            <value>5</value>
+        </property>
+        <property name="maximumDistance">
+            <value>40</value>
+        </property>
+    </object>
     <object class="FlangerEffect" id="{e28c4063-49b3-4a12-a1d6-4d7ee0d1d2d2}">
         <property name="rate">
             <value>9</value>
