@@ -5,6 +5,21 @@ using UnityEngine;
 public class CatmullRomSpline : MonoBehaviour {
 	
 	public bool isLooping = true;
+
+	public Vector3 getPoint( float t ) {
+
+		int pointIndex = Mathf.FloorToInt(transform.childCount * t);
+
+		float rest = transform.childCount * t - pointIndex;
+		
+		Vector3 p0 = transform.GetChild( (transform.childCount + pointIndex - 1) % transform.childCount ).position;
+		Vector3 p1 = transform.GetChild( pointIndex % transform.childCount ).position;
+		Vector3 p2 = transform.GetChild( (pointIndex + 1) % transform.childCount ).position;
+		Vector3 p3 = transform.GetChild( (pointIndex + 2) % transform.childCount ).position;
+
+		return GetCatmullRomPosition (rest, p0, p1, p2, p3);
+
+	}
 	
 	void OnDrawGizmos () {
 		Gizmos.color = Color.red;
