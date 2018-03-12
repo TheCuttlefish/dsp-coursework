@@ -24,15 +24,15 @@ public class SplineNavigator : MonoBehaviour {
 	void Start() {
 
 		time = 0.0f;
-		physicTimeStep = 0.01f;
+		physicTimeStep = 0.05f;
 
 		rigidbody = GetComponent<Rigidbody>();
 
-		var pos = spline.getPoint( time );
+		var pos = spline.getPoint( time + physicTimeStep * .5f );
 
 		rigidbody.transform.position = pos;
 
-		var forward = (spline.getPoint( time + 0.01f ) - pos ).normalized;
+		var forward = (spline.getPoint( time + physicTimeStep ) - pos ).normalized;
 
 		rigidbody.transform.forward = forward;
 
@@ -54,9 +54,33 @@ public class SplineNavigator : MonoBehaviour {
 
 	void UpdatePhysics() {
 
-		print( time );
+		var currSplinePoint = spline.getPoint( time );
+		var nextSplinePoint = spline.getPoint( time + physicTimeStep );
+		var splineTangent = ( nextSplinePoint - currSplinePoint ).normalized;
+
+		var postToPrevSplinePoint = currSplinePoint - rigidbody.position;
+
+		var posToNextSplinePoint = nextSplinePoint - rigidbody.position;
+
+		var postToNextDOTTangent = Vector3.Dot( posToNextSplinePoint.normalized, splineTangent.normalized );
+
+		var rightDOTposToNextSplinePoint = Vector3.Dot( transform.right, posToNextSplinePoint.normalized );
+
+		var forwardDOTPosToNextSplinePoint = Vector3.Dot( transform.forward, posToNextSplinePoint.normalized);
+
+		var torqueForce = 0.5f;
+		
+		rigidbody.AddRelativeTorque( Vector3.up * torqueForce * (rightDOTposToNextSplinePoint) );
 
 		var maxSpeed = 5.0f;
+
+		var velocityDot = Vector3.Dot( rigidbody.velocity.normalized, posToNextSplinePoint.normalized );
+
+		if( velocityDot < 0.5f ) {
+
+			rigidbody.AddForce( posToNextSplinePoint.normalized * velocityDot);
+
+		}
 
 		if( rigidbody.velocity.magnitude < maxSpeed ) {
 
@@ -64,47 +88,9 @@ public class SplineNavigator : MonoBehaviour {
 
 		}
 
-		var currSplinePoint = spline.getPoint( time );
-		var nextSplinePoint = spline.getPoint( time + physicTimeStep );
-		var splineTangent = ( nextSplinePoint - currSplinePoint ).normalized;
-
-		var posToNextSplinePoint = nextSplinePoint - rigidbody.position;
-
-		var postToNextDOTTangent = Vector3.Dot( posToNextSplinePoint.normalized, splineTangent.normalized );
-
-		var rightDOTposToNextSplinePoint = Vector3.Dot( transform.right, posToNextSplinePoint );
-
-		var forwardDOTPosToNextSplinePoint = Vector3.Dot( transform.forward, posToNextSplinePoint.normalized);
-
-		// print( 
-		// 	"postToNextDotTangent: " + postToNextDOTTangent.ToString() 
-		// 	+ " - rightDotTangent: " + rightDOTTangent.ToString() 
-		// );
-
-		var torqueForce = 1.0f;
-		
-		rigidbody.AddRelativeTorque( Vector3.up * torqueForce * (rightDOTposToNextSplinePoint) );
-
-		if( forwardDOTPosToNextSplinePoint < 0.9f ) {
-
-			// // if is on the right
-			// if( rightDOTTangent > 0.0f ) {
-
-
-			// // if is on the left
-			// } else {
-
-			// 	rigidbody.AddRelativeTorque( - Vector3.up * torqueForce );
-
-			// }
-
-		}
-
-		var minDistance = 5.0f;
-
-		if( posToNextSplinePoint.magnitude < minDistance ) {
+		if( posToNextSplinePoint.sqrMagnitude < postToPrevSplinePoint.sqrMagnitude ) {
 			
-			time = (time + physicTimeStep) % 1;
+			time = (time + .001f) % 1;
 
 		}
 
