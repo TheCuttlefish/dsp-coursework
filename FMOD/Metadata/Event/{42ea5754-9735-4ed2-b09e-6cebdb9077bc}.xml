@@ -160,7 +160,7 @@
     </object>
     <object class="FlangerEffect" id="{e28c4063-49b3-4a12-a1d6-4d7ee0d1d2d2}">
         <property name="rate">
-            <value>9</value>
+            <value>0</value>
         </property>
     </object>
     <object class="MixerBusFader" id="{b391abfb-3233-4f3a-8c08-9ef3548c32d6}"/>
