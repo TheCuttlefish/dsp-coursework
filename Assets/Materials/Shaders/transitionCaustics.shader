@@ -102,9 +102,9 @@ Shader "Shader Forge/transitionCaustics" {
                 float3 diffuseColor = lerp(_Color.rgb,(_Color2.rgb*node_3777),node_3777);
                 float3 diffuse = (directDiffuse + indirectDiffuse) * diffuseColor;
 ////// Emissive:
-                float4 node_7689 = _Time;
+                float4 node_8646 = _Time;
                 float2 node_5890 = float2(i.posWorld.r,i.posWorld.b);
-                float2 node_2660 = (_raysscale1*(node_5890+node_7689.g*float2(1,1)));
+                float2 node_2660 = (_raysscale1*(node_5890+node_8646.g*float2(1,1)));
                 float4 node_1027 = tex2D(_Rays,TRANSFORM_TEX(node_2660, _Rays));
                 float4 node_579 = _Time;
                 float2 node_6595 = (i.uv0*_raysnoisescale);
