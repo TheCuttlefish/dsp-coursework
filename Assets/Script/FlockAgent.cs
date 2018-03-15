@@ -15,7 +15,7 @@ public class FlockAgent : MonoBehaviour {
 	float thrust = 25.0f;
 	float torqueStrength = 1000.5f;
 	float wallTorqueStrength = 40.0f;
-	
+
 	[HideInInspector]
 	public Rigidbody body;
 
@@ -28,62 +28,64 @@ public class FlockAgent : MonoBehaviour {
 
 	Transform camera;
 
+	FlockAgent[] flockAgents;
+
 	void Start () {
 
 		wallLimit = 500.0f;
 
 		// Time.timeScale = 5.0f;		
-		body = GetComponent<Rigidbody>();
-		layerMask = LayerMask.GetMask( layers );
+		body = GetComponent<Rigidbody> ();
+		layerMask = LayerMask.GetMask (layers);
 		camera = Camera.main.transform;
-		
+
+		flockAgents = GameObject.FindObjectsOfType<FlockAgent> ();
+
 	}
 
-	void FixedUpdate() {
+	void FixedUpdate () {
 
-		if( body.velocity.magnitude < maxSpeed ) {
+		if (body.velocity.magnitude < maxSpeed) {
 
-			body.AddRelativeForce( Vector3.forward * thrust );
+			body.AddRelativeForce (Vector3.forward * thrust);
 
 		} else {
 
-			body.AddRelativeForce( - Vector3.forward * thrust );
+			body.AddRelativeForce (-Vector3.forward * thrust);
 
 		}
 
 		// SceneConstrain();
 
-		WallConstrain();
+		Flocking();
+		WallConstrain ();
 
 	}
 
-	void SceneConstrain() {
+	void SceneConstrain () {
 
 		var vectorFromCenter = transform.position - limitPoint.position;
 
 		var distanceFromCenter = vectorFromCenter.magnitude;
 
 		// if it is outside the limit
-		if( distanceFromCenter > outsideLimit ) {
+		if (distanceFromCenter > outsideLimit) {
 
-			var dotToCenter = Vector3.Dot( 
-				body.velocity.normalized, 
-				vectorFromCenter.normalized 
+			var dotToCenter = Vector3.Dot (
+				body.velocity.normalized,
+				vectorFromCenter.normalized
 			);
 
-			var rightDot = Vector3.Dot( 
-				transform.right, 
-				- vectorFromCenter.normalized 
+			var rightDot = Vector3.Dot (
+				transform.right, -vectorFromCenter.normalized
 			);
 
 			var torque = Vector3.up * torqueStrength * rightDot;
 
-			body.AddRelativeTorque( torque );
+			body.AddRelativeTorque (torque);
 
 			// // if its moving outside the limit
 			// if( dotToCenter > 0 ) {
-
-
 
 			// }
 
@@ -93,9 +95,9 @@ public class FlockAgent : MonoBehaviour {
 
 	}
 
-	void WallConstrain() {
+	void WallConstrain () {
 
-		var frontWallHit = getWallPointAt( body.velocity.normalized );
+		var frontWallHit = getWallPointAt (body.velocity.normalized);
 
 		var wallCollisionPoint = frontWallHit.point;
 
@@ -105,52 +107,85 @@ public class FlockAgent : MonoBehaviour {
 
 		// if( wallCollisionDistance < wallLimit  && wallCollisionDistance != .0f ) {
 
-			var crossRight = Vector3.Cross( body.velocity.normalized, transform.up );
+		var crossRight = Vector3.Cross (body.velocity.normalized, transform.up);
 
-			var rightWallHit = getWallPointAt( body.velocity.normalized * 1.5f - crossRight.normalized );
-			var leftWallHit = getWallPointAt( body.velocity.normalized * 1.5f + crossRight.normalized );
+		var rightWallHit = getWallPointAt (body.velocity.normalized * 1.5f - crossRight.normalized);
+		var leftWallHit = getWallPointAt (body.velocity.normalized * 1.5f + crossRight.normalized);
 
-			var rightWall = rightWallHit.point;
-			var leftWall = leftWallHit.point;
+		var rightWall = rightWallHit.point;
+		var leftWall = leftWallHit.point;
 
-			var rightWallVector = rightWall - transform.position;
-			var leftWallVector = leftWall - transform.position;
+		var rightWallVector = rightWall - transform.position;
+		var leftWallVector = leftWall - transform.position;
 
-			var torque = Vector3.up * wallTorqueStrength / wallCollisionDistance;
+		var torque = Vector3.up * wallTorqueStrength / wallCollisionDistance;
 
-			if( rightWallVector.sqrMagnitude < leftWallVector.sqrMagnitude ) {
-				
-				torque = - torque;
+		if (rightWallVector.sqrMagnitude < leftWallVector.sqrMagnitude) {
 
-				// var targetVelocity = Quaternion.FromToRotation( body.velocity, crossRight) * body.velocity;
-				// body.velocity = Vector3.Slerp( body.velocity, targetVelocity, Time.fixedDeltaTime * 5.0f );
-				body.AddForce( (crossRight*400.0f) /  wallCollisionDistance );
+			torque = -torque;
 
-			} else {
+			// var targetVelocity = Quaternion.FromToRotation( body.velocity, crossRight) * body.velocity;
+			// body.velocity = Vector3.Slerp( body.velocity, targetVelocity, Time.fixedDeltaTime * 5.0f );
+			body.AddForce ((crossRight * 400.0f) / wallCollisionDistance);
 
-				body.AddForce( - (crossRight*400.0f) / wallCollisionDistance );
-				// var targetVelocity = Quaternion.FromToRotation( body.velocity, - crossRight) * body.velocity;
-				// body.velocity = Vector3.Slerp( body.velocity, targetVelocity, Time.fixedDeltaTime * 5.0f );
+		} else {
 
-			}
+			body.AddForce (-(crossRight * 400.0f) / wallCollisionDistance);
+			// var targetVelocity = Quaternion.FromToRotation( body.velocity, - crossRight) * body.velocity;
+			// body.velocity = Vector3.Slerp( body.velocity, targetVelocity, Time.fixedDeltaTime * 5.0f );
 
+		}
 
-			body.AddRelativeTorque( torque * 0.75f );
+		body.AddRelativeTorque (torque * 0.75f);
 
-			// body.transform.forward = body.velocity.normalized;
+		// body.transform.forward = body.velocity.normalized;
 
 		// }
 
 	}
 
-	public RaycastHit getWallPointAt( Vector3 direction ) {
+	public RaycastHit getWallPointAt (Vector3 direction) {
 
 		RaycastHit hit;
 		var end = transform.position + direction * 9999.9f;
-		Physics.Linecast( transform.position, end, out hit, layerMask);
+		Physics.Linecast (transform.position, end, out hit, layerMask);
 
 		return hit;
-		
+
+	}
+
+	void Flocking () {
+
+		var separationTarget = 7.0f;
+		var visibilityRange = 30.0f;
+		var separationForce = 10.0f;
+		var alignmentForce = 10.0f;
+		var cohesionForce = 50.0f;
+
+		foreach (var agent in flockAgents) {
+
+			if (agent == this) continue;
+
+			var toAgentVector = agent.transform.position - transform.position;
+
+			var agentDist = toAgentVector.magnitude;
+
+			if (agentDist < visibilityRange) {
+
+				if (separationTarget > agentDist) {
+					// Separation
+					body.AddForce (-toAgentVector.normalized * separationForce);
+				} else {
+					body.AddForce (toAgentVector.normalized * alignmentForce);
+					// Alignment
+
+				}
+				// Cohesion 
+
+			}
+
+		}
+
 	}
 
 }
