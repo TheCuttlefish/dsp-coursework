@@ -13,18 +13,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114889282836935178}
-  - {fileID: 114826077435468184}
+  - {fileID: 114984940833876004}
   EditorEvents:
   - {fileID: 114234198779619930}
   - {fileID: 114518956171848616}
   - {fileID: 114328804150420392}
   - {fileID: 114745321118365258}
   - {fileID: 114747232321751468}
-  MasterBankRef: {fileID: 114826077435468184}
+  MasterBankRef: {fileID: 114984940833876004}
   StringsBankRef: {fileID: 114889282836935178}
-  stringsBankWriteTime: 636564644696627506
+  stringsBankWriteTime: 636566599260000000
   cacheVersion: 2
 --- !u!114 &114002580539122994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: shipSpeed
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114030449272433594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -243,6 +258,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114207859034891242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: shipSpeed
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114222589028913350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,12 +305,12 @@ MonoBehaviour:
   Path: event:/ship
   guid: 1b196ddf8f5d354ca3b039c203500dcd
   Banks:
-  - {fileID: 114826077435468184}
+  - {fileID: 114984940833876004}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114632025328629188}
+  - {fileID: 114030449272433594}
   MinDistance: 0
   MaxDistance: 0
   Length: 2793
@@ -311,6 +341,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: shipSpeed
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114284225927924024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isOccluded
   Min: 0
   Max: 1
   Default: 0
@@ -373,12 +418,12 @@ MonoBehaviour:
   Path: event:/whale
   guid: e1f2d94994fa574baee60864828d57db
   Banks:
-  - {fileID: 114826077435468184}
+  - {fileID: 114984940833876004}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114770972541010560}
+  - {fileID: 114929926133027128}
   MinDistance: 80
   MaxDistance: 1000
   Length: 22443
@@ -556,7 +601,7 @@ MonoBehaviour:
   Path: event:/bubles
   guid: 74724e2ad52749419d684564e6006ded
   Banks:
-  - {fileID: 114826077435468184}
+  - {fileID: 114984940833876004}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -564,6 +609,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6200
+--- !u!114 &114555629792504480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isOccluded
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114556056299498166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -834,12 +894,12 @@ MonoBehaviour:
   Path: event:/sparks
   guid: c80c1da80682e44494d07c15f7480f25
   Banks:
-  - {fileID: 114826077435468184}
+  - {fileID: 114984940833876004}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114988289999246004}
+  - {fileID: 114284225927924024}
   MinDistance: 10
   MaxDistance: 100
   Length: 21260
@@ -857,7 +917,7 @@ MonoBehaviour:
   Path: event:/ship (2)
   guid: 5457ea423597d24eb09e6cebdb9077bc
   Banks:
-  - {fileID: 114826077435468184}
+  - {fileID: 114984940833876004}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -995,6 +1055,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 3883872
   Exists: 1
+--- !u!114 &114845417227711296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isOccluded
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114858573770392036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1060,7 +1135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636564644696627506
+  lastModified: 636566599260000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1078,6 +1153,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: shipSpeed
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114929926133027128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isOccluded
   Min: 0
   Max: 1
   Default: 0
@@ -1126,6 +1216,24 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114984940833876004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Oyar\repos\uni\dsp-coursework\FMOD\Build\Desktop\Master Bank.bank
+  lastModified: 636566599260000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 3883872
+  Exists: 1
 --- !u!114 &114985275615339836
 MonoBehaviour:
   m_ObjectHideFlags: 0
