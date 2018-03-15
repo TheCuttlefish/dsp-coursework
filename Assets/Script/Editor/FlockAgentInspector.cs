@@ -15,9 +15,13 @@ public class FlockAgentInspector : Editor {
 
 		var crossRight = Vector3.Cross( obj.body.velocity.normalized, obj.transform.up );
 
-		var wallCollisionPoint = obj.getWallPointAt( obj.body.velocity.normalized );
-		var rightWall = obj.getWallPointAt( obj.body.velocity.normalized * 1.5f + crossRight.normalized );
-		var leftWall = obj.getWallPointAt( obj.body.velocity.normalized * 1.5f - crossRight.normalized );
+		var frontWallHit = obj.getWallPointAt( obj.body.velocity.normalized );
+		var rightWallHit = obj.getWallPointAt( obj.body.velocity.normalized * 1.5f - crossRight.normalized );
+		var leftWallHit = obj.getWallPointAt( obj.body.velocity.normalized * 1.5f + crossRight.normalized );
+
+		var wallCollisionPoint = frontWallHit.point;
+		var rightWall = rightWallHit.point;
+		var leftWall = leftWallHit.point;
 
 		VectorDebug forward = new VectorDebug {
 			start = obj.transform.position,
@@ -46,13 +50,19 @@ public class FlockAgentInspector : Editor {
 
 		list = list.OrderByDescending( a => a.vector.sqrMagnitude).ToList();
 
+		var alpha = 0.0f;
+
 		foreach( var item in list ){
 
-			color.a *= 0.5f;
+			alpha += 1.0f / 3.0f;
+
+			color.r = 1.0f - alpha;
 
 			Debug.DrawLine( item.start, item.end, color );
 
 		}
+
+		Debug.Log( "angularVelocity: " + obj.body.angularVelocity.magnitude );
 
 	}
 

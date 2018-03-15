@@ -11,9 +11,10 @@ public class FlockAgent : MonoBehaviour {
 	[HideInInspector]
 	public float wallLimit = 200.0f;
 
-	float maxSpeed = 5.0f;
-	float torqueStrength = 0.1f;
-	float wallTorqueStrength = 4.0f;
+	float maxSpeed = 25.0f;
+	float thrust = 25.0f;
+	float torqueStrength = 1000.5f;
+	float wallTorqueStrength = 40.0f;
 	
 	[HideInInspector]
 	public Rigidbody body;
@@ -31,7 +32,7 @@ public class FlockAgent : MonoBehaviour {
 
 		wallLimit = 500.0f;
 
-		Time.timeScale = 5.0f;		
+		// Time.timeScale = 5.0f;		
 		body = GetComponent<Rigidbody>();
 		layerMask = LayerMask.GetMask( layers );
 		camera = Camera.main.transform;
@@ -42,11 +43,15 @@ public class FlockAgent : MonoBehaviour {
 
 		if( body.velocity.magnitude < maxSpeed ) {
 
-			body.AddRelativeForce( Vector3.forward, ForceMode.Impulse );
+			body.AddRelativeForce( Vector3.forward * thrust );
+
+		} else {
+
+			body.AddRelativeForce( - Vector3.forward * thrust );
 
 		}
 
-		SceneConstrain();
+		// SceneConstrain();
 
 		WallConstrain();
 
@@ -90,49 +95,61 @@ public class FlockAgent : MonoBehaviour {
 
 	void WallConstrain() {
 
-		var wallCollisionPoint = getWallPointAt(body.velocity.normalized);
+		var frontWallHit = getWallPointAt( body.velocity.normalized );
+
+		var wallCollisionPoint = frontWallHit.point;
 
 		var wallCollisionVector = wallCollisionPoint - transform.position;
 
 		var wallCollisionDistance = wallCollisionVector.magnitude;
 
-		if( wallCollisionDistance < wallLimit  && wallCollisionDistance != .0f ) {
+		// if( wallCollisionDistance < wallLimit  && wallCollisionDistance != .0f ) {
 
 			var crossRight = Vector3.Cross( body.velocity.normalized, transform.up );
 
-			var rightWall = getWallPointAt( body.velocity.normalized * 1.5f + crossRight.normalized );
-			var leftWall = getWallPointAt( body.velocity.normalized * 1.5f - crossRight.normalized );
+			var rightWallHit = getWallPointAt( body.velocity.normalized * 1.5f - crossRight.normalized );
+			var leftWallHit = getWallPointAt( body.velocity.normalized * 1.5f + crossRight.normalized );
+
+			var rightWall = rightWallHit.point;
+			var leftWall = leftWallHit.point;
 
 			var rightWallVector = rightWall - transform.position;
 			var leftWallVector = leftWall - transform.position;
 
 			var torque = Vector3.up * wallTorqueStrength / wallCollisionDistance;
 
-			if( rightWallVector.sqrMagnitude > leftWallVector.sqrMagnitude ) {
+			if( rightWallVector.sqrMagnitude < leftWallVector.sqrMagnitude ) {
 				
 				torque = - torque;
 
+				// var targetVelocity = Quaternion.FromToRotation( body.velocity, crossRight) * body.velocity;
+				// body.velocity = Vector3.Slerp( body.velocity, targetVelocity, Time.fixedDeltaTime * 5.0f );
+				body.AddForce( (crossRight*400.0f) /  wallCollisionDistance );
+
+			} else {
+
+				body.AddForce( - (crossRight*400.0f) / wallCollisionDistance );
+				// var targetVelocity = Quaternion.FromToRotation( body.velocity, - crossRight) * body.velocity;
+				// body.velocity = Vector3.Slerp( body.velocity, targetVelocity, Time.fixedDeltaTime * 5.0f );
+
 			}
 
-			body.AddRelativeTorque( torque );
 
-		}
+			body.AddRelativeTorque( torque * 0.75f );
+
+			// body.transform.forward = body.velocity.normalized;
+
+		// }
 
 	}
 
-	public Vector3 getWallPointAt( Vector3 direction ) {
+	public RaycastHit getWallPointAt( Vector3 direction ) {
 
 		RaycastHit hit;
 		var end = transform.position + direction * 9999.9f;
 		Physics.Linecast( transform.position, end, out hit, layerMask);
 
-		if( hit.collider != null ) {
-
-			return hit.point;
-
-		}
-
-		return end;
+		return hit;
 		
 	}
 
