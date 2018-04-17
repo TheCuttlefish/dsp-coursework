@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 114747232321751468}
   MasterBankRef: {fileID: 114714539088535178}
   StringsBankRef: {fileID: 114889282836935178}
-  stringsBankWriteTime: 636564644696627506
+  stringsBankWriteTime: 636595892421120794
   cacheVersion: 2
 --- !u!114 &114002580539122994
 MonoBehaviour:
@@ -288,6 +288,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114220461175167236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isOccluded
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114222589028913350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,10 +340,25 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114965889732036640}
+  - {fileID: 114885262226293246}
   MinDistance: 0
   MaxDistance: 0
   Length: 2793
+--- !u!114 &114248281597503184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: shipSpeed
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114257061826472190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,10 +483,25 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114022509091158288}
+  - {fileID: 114220461175167236}
   MinDistance: 80
   MaxDistance: 1000
   Length: 22443
+--- !u!114 &114333848522953024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isOccluded
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114339020119404506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,6 +888,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114660714920784636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isOccluded
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114688842053484184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,11 +967,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\repos\uni\dsp-coursework\FMOD\Build\Desktop\Master Bank.bank
-  lastModified: 636564644696557320
+  lastModified: 636595892420945332
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 3883872
+    Value: 3884192
   Exists: 1
 --- !u!114 &114741669641909700
 MonoBehaviour:
@@ -947,7 +1007,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114281221667311648}
+  - {fileID: 114333848522953024}
   MinDistance: 10
   MaxDistance: 100
   Length: 21260
@@ -1103,6 +1163,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 3883872
   Exists: 1
+--- !u!114 &114839686946171566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isOccluded
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114845417227711296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,6 +1209,21 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114862701802237758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: shipSpeed
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114885262226293246
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1183,7 +1273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636564644696627506
+  lastModified: 636595892421120794
   LoadResult: 0
   FileSizes:
   - Name: Desktop
